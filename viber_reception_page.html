@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahad & Sue's Wedding Reception</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('couple-photo.JPG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            padding: 20px;
+        }
+
+        /* Add a semi-transparent cherry red overlay for better text readability */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(196, 30, 58, 0.4) 0%, rgba(139, 0, 0, 0.45) 100%);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            padding: 50px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 0.6s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #ffffff;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .viber-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            color: white;
+            padding: 18px 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .viber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .viber-button:hover::before {
+            left: 100%;
+        }
+
+        .viber-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 30, 58, 0.6);
+            background: linear-gradient(135deg, #D4243E 0%, #A00000 100%);
+        }
+
+        .viber-button:active {
+            transform: translateY(-1px);
+        }
+
+        .icon {
+            display: inline-block;
+            width: 90px;
+            height: 90px;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #C41E3A 0%, #8B0000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            color: white;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(196, 30, 58, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .hearts {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 24px;
+            color: #ffffff;
+            opacity: 0.9;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+
+            .viber-button {
+                padding: 15px 40px;
+                font-size: 1.1em;
+            }
+
+            .icon {
+                width: 80px;
+                height: 80px;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hearts">❤️ ❤️ ❤️</div>
+        <div class="icon">📸</div>
+        <h1>Ahad & Sue's Reception</h1>
+        <p>Capture and share your favorite moments from our special day. Join our Viber group to upload photos and relive the memories together.</p>
+        <a href="https://invite.viber.com/?g2=AQBa2TrZIk%2FT4VWM5bcODOtILQiK1mzK30lFzv9DR4ueyJ3iblQFE3tg3nLn0vdk" target="_blank" class="viber-button">Join Photo Group</a>
+    </div>
+
+    <script>
+        // Background image is set to 'couple-photo.jpg'
+        // Make sure the image file is in the same folder as this HTML file
+    </script>
+</body>
+</html>
